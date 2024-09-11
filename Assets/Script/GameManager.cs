@@ -5,8 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
-// Write down your variables here
-
+	private int score = 0;
     private void Awake()
     {
         Instance = this;
@@ -14,6 +13,6 @@ public class GameManager : MonoBehaviour
 
     public void IncrementScore()
     {
-
+		score += 1;
     }
 }
