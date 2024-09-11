@@ -9,12 +9,16 @@ public class TargetComponent : MonoBehaviour
         if (collision.gameObject.CompareTag("Projectile"))
         {
             GameManager.Instance.IncrementScore();
+			
+			// Disabled hiding the target, in order to use the color changing behaviour
+			//Invoke("HideTarget", 5f);
+			
             Renderer parentRenderer = transform.parent.GetComponent<Renderer>();
 			if (parentRenderer != null)
 			{
 				parentRenderer.material.color = Color.green;
 				
-				Invoke("ChangeColorBack", 3f); // Change color back after 5 seconds
+				Invoke("ChangeColorBack", 5f); // Change color back after 5 seconds
 			}
 
 			
